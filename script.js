@@ -4,32 +4,27 @@ var pattern = [];
 var progress = 0;
 var gamePlaying = false;
 var tonePlaying = false;
-var volume = 0.5;
+var volume = 0.2;
 var taps = 0;
 var guessCounter = 0;
 var difficulty = 3;
+var diffsub = 10;
 var lives = 3;
 var TH = 0;
 var name = 124;
 
 //Difficult Settings
-var clueHoldTime = 750;
-var cluePauseTime = 500;
+var clueHoldTime = 650;
+var cluePauseTime = 450;
 var nextClueWaitTime = 750;
 function diff(mode) {
   difficulty = mode;
   if (mode == 4) {
-    clueHoldTime = 250;
-    cluePauseTime = 250;
-    nextClueWaitTime = 750;
+     diffsub = 15;
   } else if (mode == 5) {
-    clueHoldTime = 100;
-    cluePauseTime = 150;
-    nextClueWaitTime = 500;
+    diffsub = 20;
   } else if (mode == 10){
-    clueHoldTime = 50;
-    cluePauseTime = 50;
-    nextClueWaitTime = 100;
+    diffsub = 25;
   }
 }
 
@@ -38,6 +33,9 @@ document.getElementById("body").classList.remove("hidden");
 
 //Starts the game
 function startGame() {
+  clueHoldTime = 600;
+  cluePauseTime = 450;
+  nextClueWaitTime = 750;
   pattern = [];
   progress = 0;
   lives = 3;
@@ -213,6 +211,9 @@ function guess(btn) {
   if (btn == pattern[guessCounter]) {
     taps = 0;
     if (guessCounter == progress) {
+      clueHoldTime = clueHoldTime - diffsub;
+      cluePauseTime = clueHoldTime * .9;
+      // console.log(clueHoldTime +":"+cluePauseTime);
       if (progress == pattern.length - 1) {
         winGame();
         console.log("You won the game!");
