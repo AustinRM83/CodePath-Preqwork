@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="https://glitch.com/favicon.ico" />
+
+    <title>124 Memory</title>
+
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css" />
+
+    <!-- import the webpage's javascript file -->
+    <script src="/script.js" defer></script>
+  </head>
+  <body id="body">
+    <!-- this is the start of content -->
+    <h1 id="GT" onclick="Game_Title()">124 Memory</h1>
+    <p>The coolest webgame on the market, available at your fingertips!</p>
+    <h2 id="diff_sel">Select your difficulty:</h2>
+    <button id="Easy">Easy</button>
+    <button id="Med" onclick="diff(4)">Medium</button>
+    <button id="Hard" onclick="diff(5);Thunderdome();">Hard</button>
+    <button id="Thunderdome" class="hidden" onclick="diff(10);">Thunderdome</button>
+    <br><br>
+    <div class = "row">
+      <div class = "column">
+        <button id="startBtn" onclick="startGame();annoying();">Start</button>
+        <button id="stopBtn" class="hidden" onclick="stopGame()">Stop</button>
+      </div>
+      <div idclass = "column">
+        <p id = "lives" class = "hidden">Lives: 3</p>
+      </div>
+    </div>
+    
+    <div id="gameButtonArea" class = "hidden">
+      <button id="button1" onmousedown="startTone(1)" onmouseup="stopTone()" onclick="guess(1)"><img src="https://cdn.glitch.global/9c40afc3-a5d1-4393-b5d3-44755ee83815/Apple.png?v=1648705578335"></button>
+      <button id="button2" onmousedown="startTone(2)" onmouseup="stopTone()" onclick="guess(2)"><img src="https://cdn.glitch.global/9c40afc3-a5d1-4393-b5d3-44755ee83815/Banana.png?v=1648705616488"></button>
+      <button id="button3" onmousedown="startTone(3)" onmouseup="stopTone()" onclick="guess(3)"><img src="https://cdn.glitch.global/9c40afc3-a5d1-4393-b5d3-44755ee83815/carrot.webp?v=1648705646058"></button>
+      <button id="button4" onmousedown="startTone(4)" onmouseup="stopTone()" onclick="guess(4)"><img src="https://cdn.glitch.global/9c40afc3-a5d1-4393-b5d3-44755ee83815/Eggplant.png?v=1648705889731"></button>
+      <button id="button5" onmousedown="startTone(5)" onmouseup="stopTone()" onclick="guess(5)"><img src="https://cdn.glitch.global/9c40afc3-a5d1-4393-b5d3-44755ee83815/watermelon_580x.webp?v=1648706285153"></button>
+      <button id="button6" onmousedown="startTone(6)" onmouseup="stopTone()" onclick="guess(6)"><img src="https://cdn.glitch.global/9c40afc3-a5d1-4393-b5d3-44755ee83815/Australian-Pears.png?v=1648706307602"></button>
+      <button id="button7" onmousedown="startTone(7)" onmouseup="stopTone()" onclick="guess(7)"><img src="https://cdn.glitch.global/9c40afc3-a5d1-4393-b5d3-44755ee83815/tomato.webp?v=1648706339921"></button>
+      <button id="button8" onmousedown="startTone(8)" onmouseup="stopTone()" onclick="guess(8)"><img src="https://cdn.glitch.global/9c40afc3-a5d1-4393-b5d3-44755ee83815/Jalape%C3%B1o.png?v=1648706407079"></button>
+    </div>
+  </body>
+</html>
